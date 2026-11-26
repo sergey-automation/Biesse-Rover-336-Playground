@@ -94,3 +94,14 @@ python sir88_stm32_V27_orchestrator_v1.py --w0-start 0x000 --w0-stop 0x020 --w0-
 - Interrupting a run (Ctrl+C) performs no automatic device reset; partial
   results stay on disk.
 - Bench-test with actuators disconnected: unknown commands may switch relays.
+- 
+```
+python sir88_stm32_V27_meta_orchestrator_v1.py ^
+  --word0-start 0x100 --word0-stop 0x13F --word0-step 0x1 ^
+  --orch-args "--w0-start 0x08 --w0-stop 0x0A --w0-step 0x2 --repeats 1"
+```
+
+  ```
+python sir88_stm32_V27_orchestrator_v1.py --w0-start 0x02 --w0-stop 0x08 --w0-step 0x2 --word0 0x133 --repeats 1
+```
+  
