@@ -1,0 +1,21 @@
+.program tx9
+.wrap_target
+bitloop:
+    out pins, 1 [7]
+    jmp x-- bitloop [7]
+    irq 1
+halt:
+    jmp halt
+.wrap
+
+.program rx9
+.wrap_target
+    wait 0 pin 0
+    irq 0
+    set x, 8 [20]
+readbit:
+    in pins, 1 [14]
+    jmp x-- readbit
+    in pins, 1 [7]
+    push block
+.wrap
